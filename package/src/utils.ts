@@ -19,7 +19,7 @@ import { DateRange } from "./types";
 export const identity = <T>(x: T) => x;
 
 export const chunks = <T>(array: ReadonlyArray<T>, size: number): T[][] => {
-	return Array.from({ length: Math.ceil(array.length / size) }, (v, i) =>
+	return Array.from({ length: Math.ceil(array.length / size) }, (_v, i) =>
 		array.slice(i * size, i * size + size)
 	);
 };

@@ -52,7 +52,7 @@ const generateYears = (relativeTo: Date, count: number) => {
 	const half = Math.floor(count / 2);
 	return Array(count)
 		.fill(0)
-		.map((y, i) => relativeTo.getFullYear() - half + i); // TODO: make part of the state
+		.map((_y, i) => relativeTo.getFullYear() - half + i); // TODO: make part of the state
 };
 
 const Header: React.FunctionComponent<HeaderProps> = ({

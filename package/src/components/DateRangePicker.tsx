@@ -20,7 +20,7 @@ import Menu from "./Menu";
 
 type Marker = symbol;
 
-const MARKERS: { [key: string]: Marker } = {
+export const MARKERS: { [key: string]: Marker } = {
 	FIRST_MONTH: Symbol("firstMonth"),
 	SECOND_MONTH: Symbol("secondMonth")
 };

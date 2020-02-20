@@ -14,7 +14,7 @@ import ArrowRightAlt from "@material-ui/icons/ArrowRightAlt";
 import Month from "./Month";
 import DefinedRanges from "./DefinedRanges";
 import { DateRange, DefinedRange, Setter, NavigationAction } from "../types";
-import { MARKERS } from "..";
+import { MARKERS } from "./DateRangePicker";
 
 const styles = (theme: Theme) =>
 	createStyles({

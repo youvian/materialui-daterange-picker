@@ -4,7 +4,6 @@ import {
 	Grid,
 	Typography,
 	createStyles,
-	Theme,
 	WithStyles,
 	withStyles
 } from "@material-ui/core";
@@ -23,7 +22,7 @@ import { NavigationAction, DateRange } from "../types";
 
 const WEEK_DAYS = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
 
-const styles = (theme: Theme) =>
+const styles = () =>
 	createStyles({
 		root: {
 			width: 290
