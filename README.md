@@ -1,8 +1,8 @@
-# react-daterange-picker 
+# react-daterange-picker
 A react date range picker using material-ui components.
 
-<a href='https://www.npmjs.com/package/@matharumanpreet00/react-daterange-picker'>
-    <img src='https://img.shields.io/npm/v/@matharumanpreet00/react-daterange-picker.svg' alt='Latest npm version'>
+<a href='https://www.npmjs.com/package/react-materialui-daterange-picker'>
+    <img src='https://img.shields.io/npm/v/react-materialui-daterange-picker.svg' alt='Latest npm version'>
 </a>
 
 ## Live Demo: https://matharumanpreet00.github.io/react-daterange-picker/
@@ -13,9 +13,9 @@ A react date range picker using material-ui components.
 ## Usage
 
 ```bash
-npm install @matharumanpreet00/react-daterange-picker --save
+npm install react-materialui-daterange-picker --save
 # or with yarn
-yarn add @matharumanpreet00/react-daterange-picker
+yarn add react-materialui-daterange-picker
 ```
 
 ![Screenshot](/screenshot_1.png?raw=true "Screenshot")
@@ -23,7 +23,7 @@ yarn add @matharumanpreet00/react-daterange-picker
 ## Basic Example
 ```tsx
 import React from "react";
-import { DateRangePicker, DateRange } from "@matharumanpreet00/react-daterange-picker";
+import { DateRangePicker, DateRange } from "react-materialui-daterange-picker";
 
 type Props = {}
 type State = {
@@ -36,7 +36,7 @@ class App extends React.Component<Props, State> {
 		open: true,
 		dateRange: {}
 	};
-	
+
 	render() {
 		return (
 			<DateRangePicker
@@ -53,7 +53,7 @@ export default App;
 ## Basic example using hooks
 ```tsx
 import React from "react";
-import { DateRangePicker, DateRange } from "@matharumanpreet00/react-daterange-picker";
+import { DateRangePicker, DateRange } from "react-materialui-daterange-picker";
 
 type Props = {}
 
@@ -72,7 +72,7 @@ const App: React.FunctionComponent<Props> = props => {
 export default App;
 ```
 
-## Types 
+## Types
 ```ts
 interface DateRange {
     startDate?: Date,
@@ -95,4 +95,3 @@ Name | Type | Required | Default value | Description
 `maxDate` | `Date | string` | | 10 years from now | max date allowed in range
 `onChange` | `(DateRange) => void` | _required_ | - | handler function for providing selected date range
 `definedRanges` | `DefinedRange[]` | | - | custom defined ranges to show in the list
-
