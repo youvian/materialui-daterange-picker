@@ -17,6 +17,10 @@ const styles = () => createStyles({
   dateRangePickerContainer: {
     position: 'relative',
   },
+  dateRangePicker: {
+    position: 'relative',
+    zIndex: 1,
+  },
   dateRangeBackdrop: {
     position: 'fixed',
     height: '100vh',
@@ -72,9 +76,9 @@ const DateRangePickerWrapper: React.FunctionComponent<DateRangePickerWrapperProp
         )
       }
 
-      <DateRangePicker
-        {...props}
-      />
+      <div className={classes.dateRangePicker}>
+        <DateRangePicker {...props} />
+      </div>
     </div>
   );
 };
