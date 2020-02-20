@@ -21,7 +21,7 @@ yarn add materialui-daterange-picker
 
 ![Screenshot](/screenshot.png?raw=true "Screenshot")
 
-## Basic example using hooks
+## Basic example
 ```tsx
 import React from "react";
 import { DateRangePicker, DateRange } from "materialui-daterange-picker";
@@ -32,44 +32,15 @@ const App: React.FunctionComponent<Props> = props => {
   const [open, setOpen] = React.useState(false);
   const [dateRange, setDateRange] = React.useState<DateRange>({});
 
+  const toggle = () => setOpen(!open);
+
   return (
     <DateRangePicker
       open={open}
-      onChange={range => setDateRange(range)}
+      toggle={toggle}
+      onChange={(range) => setDateRange(range)}
     />
   );
-}
-
-export default App;
-```
-
-
-## Basic Example
-```tsx
-import React from "react";
-import { DateRangePicker, DateRange } from "materialui-daterange-picker";
-
-type Props = {}
-
-type State = {
-	open: boolean,
-	dateRange: DateRange
-}
-
-class App extends React.Component<Props, State> {
-  state = {
-    open: true,
-    dateRange: {}
-  };
-
-  render() {
-    return (
-      <DateRangePicker
-        open={this.state.open}
-        onChange={range => this.setState({ dateRange: range })}
-      />
-    );
-  }
 }
 
 export default App;
