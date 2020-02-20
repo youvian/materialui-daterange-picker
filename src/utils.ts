@@ -7,8 +7,12 @@ import {
 	addDays,
 	isSameDay,
 	isWithinRange,
+	isSameMonth,
+	addMonths,
 	parse,
-	isValid
+	isValid,
+	min,
+	max,
 } from "date-fns";
 import { DateRange } from "./types";
 
@@ -62,4 +66,16 @@ export const parseOptionalDate = (date: Date | string | Falsy, defaultValue: Dat
 		if (isValid(parsed)) return parsed;
 	}
 	return defaultValue;
+};
+
+export const getValidatedMonths = (range: DateRange, minDate: Date, maxDate: Date) => {
+	let { startDate, endDate } = range;
+	if (startDate && endDate) {
+		const newStart = max(startDate, minDate);
+		const newEnd = min(endDate, maxDate);
+
+		return [newStart, isSameMonth(newStart, newEnd) ? addMonths(newStart, 1) : newEnd];
+	} else {
+		return [startDate, endDate];
+	}
 };
