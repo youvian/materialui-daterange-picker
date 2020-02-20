@@ -93,8 +93,11 @@ interface DefinedRange {
 
 Name | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
+`onChange` | `(DateRange) => void` | _required_ | - | handler function for providing selected date range
+`toggle` | `() => void` | _required_ | - | function to show / hide the DateRangePicker
 `initialDateRange` | `DateRange` | | `{}` | initially selected date range
 `minDate` | `Date | string` | | 10 years ago | min date allowed in range
 `maxDate` | `Date | string` | | 10 years from now | max date allowed in range
-`onChange` | `(DateRange) => void` | _required_ | - | handler function for providing selected date range
 `definedRanges` | `DefinedRange[]` | | - | custom defined ranges to show in the list
+`definedRanges` | `DefinedRange[]` | | - | custom defined ranges to show in the list
+`closeOnClickOutside` | `boolean` | | true | defines if DateRangePicker will be closed when clicking outside of it

@@ -29,12 +29,12 @@ const styles = () => createStyles({
 
 interface DateRangePickerWrapperProps extends WithStyles<typeof styles> {
   open: boolean;
+  toggle: () => void;
   initialDateRange?: DateRange;
   definedRanges?: DefinedRange[];
   minDate?: Date | string;
   maxDate?: Date | string;
   onChange: (dateRange: DateRange) => void;
-  toggle: () => void;
   closeOnClickOutside?: boolean;
 }
 
