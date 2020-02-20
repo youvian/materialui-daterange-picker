@@ -11,6 +11,8 @@ import {
 // eslint-disable-next-line no-unused-vars
 import { DateRange, DefinedRange } from '../types';
 
+import DateRangePicker from './DateRangePicker';
+
 const styles = () => createStyles({
   dateRangePickerContainer: {
     position: 'relative',
@@ -70,7 +72,7 @@ const DateRangePickerWrapper: React.FunctionComponent<DateRangePickerWrapperProp
         )
       }
 
-      <DateRangePickerWrapper
+      <DateRangePicker
         {...props}
       />
     </div>
