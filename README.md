@@ -72,3 +72,4 @@ Name | Type | Required | Default value | Description
 `definedRanges` | `DefinedRange[]` | | - | custom defined ranges to show in the list
 `definedRanges` | `DefinedRange[]` | | - | custom defined ranges to show in the list
 `closeOnClickOutside` | `boolean` | | true | defines if DateRangePicker will be closed when clicking outside of it
+`wrapperClassName` | `object` | | | defines additional wrapper classes

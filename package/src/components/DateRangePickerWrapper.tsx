@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 
 import * as React from 'react';
+import classNames from 'classnames';
 import {
   createStyles,
   withStyles,
@@ -42,6 +43,7 @@ interface DateRangePickerWrapperProps extends WithStyles<typeof styles> {
   maxDate?: Date | string;
   onChange: (dateRange: DateRange) => void;
   closeOnClickOutside?: boolean;
+  wrapperClassName: object;
 }
 
 const DateRangePickerWrapper: React.FunctionComponent<DateRangePickerWrapperProps> = (
@@ -51,6 +53,7 @@ const DateRangePickerWrapper: React.FunctionComponent<DateRangePickerWrapperProp
 
   const {
     closeOnClickOutside,
+    wrapperClassName,
     classes,
     toggle,
     open,
@@ -82,8 +85,10 @@ const DateRangePickerWrapper: React.FunctionComponent<DateRangePickerWrapperProp
     }
   }, []);
 
+  const wrapperClasses = classNames(classes.dateRangePickerContainer, wrapperClassName);
+
   return (
-    <div className={classes.dateRangePickerContainer}>
+    <div className={wrapperClasses}>
       {
         open && (
           <div
