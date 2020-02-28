@@ -3,11 +3,13 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { makeStyles } from '@material-ui/core';
+import { StylesProvider } from '@material-ui/core/styles';
+
+import createGenerateClassName from '../createGenerateClassName';
+import DateRangePicker from './DateRangePicker';
 
 // eslint-disable-next-line no-unused-vars
 import { DateRange, DefinedRange } from '../types';
-
-import DateRangePicker from './DateRangePicker';
 
 const useStyles = makeStyles(() => ({
   dateRangePickerContainer: {
@@ -66,21 +68,23 @@ const DateRangePickerWrapper: React.FunctionComponent<DateRangePickerWrapperProp
   const wrapperClasses = classNames(classes.dateRangePicker, wrapperClassName);
 
   return (
-    <div className={classes.dateRangePickerContainer}>
-      {
-        open && (
-          <div
-            className={classes.dateRangeBackdrop}
-            onKeyPress={handleKeyPress}
-            onClick={handleToggle}
-          />
-        )
-      }
+    <StylesProvider generateClassName={createGenerateClassName}>
+      <div className={classes.dateRangePickerContainer}>
+        {
+          open && (
+            <div
+              className={classes.dateRangeBackdrop}
+              onKeyPress={handleKeyPress}
+              onClick={handleToggle}
+            />
+          )
+        }
 
-      <div className={wrapperClasses}>
-        <DateRangePicker {...props} />
+        <div className={wrapperClasses}>
+          <DateRangePicker {...props} />
+        </div>
       </div>
-    </div>
+    </StylesProvider>
   );
 };
 
