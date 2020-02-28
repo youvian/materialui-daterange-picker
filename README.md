@@ -1,4 +1,4 @@
-# react-daterange-picker
+# Material UI DateRange Picker
 
 A react date range picker implementation using @material-ui.
 
@@ -8,7 +8,7 @@ A react date range picker implementation using @material-ui.
 
 ## Live Demo
 
-Check out the project running at https://pedro-lb.github.io/react-daterange-picker/
+Check out the project running at https://pedro-lb.github.io/materialui-daterange-picker/
 
 ## Usage
 
