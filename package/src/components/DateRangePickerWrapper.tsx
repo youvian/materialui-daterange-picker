@@ -85,10 +85,10 @@ const DateRangePickerWrapper: React.FunctionComponent<DateRangePickerWrapperProp
     }
   }, []);
 
-  const wrapperClasses = classNames(classes.dateRangePickerContainer, wrapperClassName);
+  const wrapperClasses = classNames(classes.dateRangePicker, wrapperClassName);
 
   return (
-    <div className={wrapperClasses}>
+    <div className={classes.dateRangePickerContainer}>
       {
         open && (
           <div
@@ -99,7 +99,7 @@ const DateRangePickerWrapper: React.FunctionComponent<DateRangePickerWrapperProp
         )
       }
 
-      <div className={classes.dateRangePicker}>
+      <div className={wrapperClasses}>
         <DateRangePicker {...props} />
       </div>
     </div>
