@@ -47,6 +47,8 @@ interface DateRangePickerWrapperProps extends WithStyles<typeof styles> {
 const DateRangePickerWrapper: React.FunctionComponent<DateRangePickerWrapperProps> = (
   props: DateRangePickerWrapperProps,
 ) => {
+  const hasFixedCss = React.useRef(false);
+
   const {
     closeOnClickOutside,
     classes,
@@ -64,13 +66,20 @@ const DateRangePickerWrapper: React.FunctionComponent<DateRangePickerWrapperProp
 
   const handleKeyPress = (event: any) => event?.key === 'Escape' && handleToggle();
 
-  // Force inject CSS into page - to avoid conflicts with other Material UI versions.
+  React.useEffect(() => {
+    if (open && !hasFixedCss.current) {
+      hasFixedCss.current = true;
+      toggle();
+    }
+  }, [
+    open,
+  ]);
+
+  // Force inject CSS into page after loading - to avoid conflicts with other Material UI versions.
   React.useEffect(() => {
     if (!open) {
       toggle();
     }
-
-    setTimeout(toggle, 50);
   }, []);
 
   return (
