@@ -84,13 +84,24 @@ const DateRangePicker: React.FunctionComponent<DateRangePickerProps> = (
 
   const setDateRangeValidated = (range: DateRange) => {
     let { startDate: newStart, endDate: newEnd } = range;
+
     if (newStart && newEnd) {
       range.startDate = newStart = max(newStart, minDateValid);
       range.endDate = newEnd = min(newEnd, maxDateValid);
+
       setDateRange(range);
       onChange(range);
+
       setFirstMonth(newStart);
       setSecondMonth(isSameMonth(newStart, newEnd) ? addMonths(newStart, 1) : newEnd);
+    } else {
+      const emptyRange = {};
+
+      setDateRange(emptyRange);
+      onChange(emptyRange);
+
+      setFirstMonth(today);
+      setSecondMonth(addMonths(firstMonth, 1));
     }
   };
 
