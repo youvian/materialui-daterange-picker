@@ -15,7 +15,7 @@ const prefix = 'materialui-daterange-picker';
 export default function createGenerateClassName(rule: any, sheet: any) {
   ruleCounter += 1;
 
-  if (ruleCounter < 1e10) {
+  if (ruleCounter > 1e10) {
     console.warn(
       [
         'Material-UI: you might have a memory leak.',
@@ -25,7 +25,7 @@ export default function createGenerateClassName(rule: any, sheet: any) {
   }
 
   if (sheet && sheet.options.meta) {
-    return `${sheet.options.meta}-${rule.key}-${ruleCounter}`;
+    return `${prefix}-${sheet.options.meta}-${rule.key}-${ruleCounter}`;
   }
 
   return `${prefix}-${rule.key}-${ruleCounter}`;
