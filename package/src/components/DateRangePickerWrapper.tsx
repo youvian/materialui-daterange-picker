@@ -64,6 +64,15 @@ const DateRangePickerWrapper: React.FunctionComponent<DateRangePickerWrapperProp
 
   const handleKeyPress = (event: any) => event?.key === 'Escape' && handleToggle();
 
+  // Force inject CSS into page - to avoid conflicts with other Material UI versions.
+  React.useEffect(() => {
+    if (!open) {
+      toggle();
+    }
+
+    setTimeout(toggle, 50);
+  }, []);
+
   return (
     <div className={classes.dateRangePickerContainer}>
       {
