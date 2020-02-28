@@ -66,10 +66,9 @@ Name | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
 `onChange` | `(DateRange) => void` | _required_ | - | handler function for providing selected date range
 `toggle` | `() => void` | _required_ | - | function to show / hide the DateRangePicker
-`initialDateRange` | `DateRange` | | `{}` | initially selected date range
-`minDate` | `Date | string` | | 10 years ago | min date allowed in range
-`maxDate` | `Date | string` | | 10 years from now | max date allowed in range
-`definedRanges` | `DefinedRange[]` | | - | custom defined ranges to show in the list
-`definedRanges` | `DefinedRange[]` | | - | custom defined ranges to show in the list
-`closeOnClickOutside` | `boolean` | | true | defines if DateRangePicker will be closed when clicking outside of it
-`wrapperClassName` | `object` | | | defines additional wrapper classes
+`initialDateRange` | `DateRange` | _optional_ | `{}` | initially selected date range
+`minDate` | `Date` or `string` | _optional_ | 10 years ago | min date allowed in range
+`maxDate` | `Date` or `string` | _optional_ | 10 years from now | max date allowed in range
+`definedRanges` | `DefinedRange[]` | _optional_ | - | custom defined ranges to show in the list
+`closeOnClickOutside` | `boolean` | _optional_ | `true` | defines if DateRangePicker will be closed when clicking outside of it
+`wrapperClassName` | `object` | _optional_ | `undefined` | defines additional wrapper style classes
