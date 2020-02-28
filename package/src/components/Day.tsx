@@ -91,7 +91,7 @@ const Day: React.FunctionComponent<DayProps> = ({
       onMouseOver={onHover}
     >
       <Typography
-        color={!disabled ? 'default' : 'textSecondary'}
+        color={!disabled ? 'inherit' : 'textSecondary'}
         className={combine(
           classes.buttonText,
           !disabled && filled && classes.contrast,
