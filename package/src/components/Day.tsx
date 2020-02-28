@@ -4,16 +4,13 @@ import * as React from 'react';
 import {
   IconButton,
   Typography,
-  createStyles,
-  withStyles,
+  makeStyles,
   // eslint-disable-next-line no-unused-vars
   Theme,
-  // eslint-disable-next-line no-unused-vars
-  WithStyles,
 } from '@material-ui/core';
 import { combine } from '../utils';
 
-const styles = (theme: Theme) => createStyles({
+const useStyles = makeStyles((theme: Theme) => ({
   leftBorderRadius: {
     borderRadius: '50% 0 0 50%',
   },
@@ -46,9 +43,9 @@ const styles = (theme: Theme) => createStyles({
   contrast: {
     color: theme.palette.primary.contrastText,
   },
-});
+}));
 
-interface DayProps extends WithStyles<typeof styles> {
+interface DayProps {
   filled?: boolean;
   outlined?: boolean;
   highlighted?: boolean;
@@ -61,7 +58,6 @@ interface DayProps extends WithStyles<typeof styles> {
 }
 
 const Day: React.FunctionComponent<DayProps> = ({
-  classes,
   startOfRange,
   endOfRange,
   disabled,
@@ -71,37 +67,41 @@ const Day: React.FunctionComponent<DayProps> = ({
   onClick,
   onHover,
   value,
-}: DayProps) => (
-  <div
-    className={combine(
-      classes.buttonContainer,
-      startOfRange && classes.leftBorderRadius,
-      endOfRange && classes.rightBorderRadius,
-      !disabled && highlighted && classes.highlighted,
-    )}
-  >
-    <IconButton
-      className={combine(
-        classes.button,
-        !disabled && outlined && classes.outlined,
-        !disabled && filled && classes.filled,
-      )}
-      disabled={disabled}
-      onClick={onClick}
-      onMouseOver={onHover}
-    >
-      <Typography
-        color={!disabled ? 'textPrimary' : 'textSecondary'}
-        className={combine(
-          classes.buttonText,
-          !disabled && filled && classes.contrast,
-        )}
-        variant="body2"
-      >
-        {value}
-      </Typography>
-    </IconButton>
-  </div>
-);
+}: DayProps) => {
+  const classes = useStyles();
 
-export default withStyles(styles)(Day);
+  return (
+    <div
+      className={combine(
+        classes.buttonContainer,
+        startOfRange && classes.leftBorderRadius,
+        endOfRange && classes.rightBorderRadius,
+        !disabled && highlighted && classes.highlighted,
+      )}
+    >
+      <IconButton
+        className={combine(
+          classes.button,
+          !disabled && outlined && classes.outlined,
+          !disabled && filled && classes.filled,
+        )}
+        disabled={disabled}
+        onClick={onClick}
+        onMouseOver={onHover}
+      >
+        <Typography
+          color={!disabled ? 'textPrimary' : 'textSecondary'}
+          className={combine(
+            classes.buttonText,
+            !disabled && filled && classes.contrast,
+          )}
+          variant="body2"
+        >
+          {value}
+        </Typography>
+      </IconButton>
+    </div>
+  );
+};
+
+export default Day;

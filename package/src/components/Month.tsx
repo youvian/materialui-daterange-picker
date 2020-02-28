@@ -1,13 +1,9 @@
 import * as React from 'react';
 import {
-  // eslint-disable-next-line no-unused-vars
-  WithStyles,
-
   Paper,
   Grid,
   Typography,
-  createStyles,
-  withStyles,
+  makeStyles,
 } from '@material-ui/core';
 import {
   getDate,
@@ -33,7 +29,7 @@ import { NavigationAction, DateRange } from '../types';
 
 const WEEK_DAYS = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
 
-const styles = () => createStyles({
+const useStyles = makeStyles(() => ({
   root: {
     width: 290,
   },
@@ -48,9 +44,9 @@ const styles = () => createStyles({
     marginTop: 15,
     marginBottom: 20,
   },
-});
+}));
 
-interface MonthProps extends WithStyles<typeof styles> {
+interface MonthProps {
   value: Date;
   marker: symbol;
   dateRange: DateRange;
@@ -69,8 +65,9 @@ interface MonthProps extends WithStyles<typeof styles> {
 }
 
 const Month: React.FunctionComponent<MonthProps> = (props: MonthProps) => {
+  const classes = useStyles();
+
   const {
-    classes,
     helpers,
     handlers,
     value: date,
@@ -152,4 +149,4 @@ const Month: React.FunctionComponent<MonthProps> = (props: MonthProps) => {
   );
 };
 
-export default withStyles(styles)(Month);
+export default Month;

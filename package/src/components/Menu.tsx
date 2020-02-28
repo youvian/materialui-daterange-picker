@@ -4,10 +4,7 @@ import {
   Grid,
   Typography,
   Divider,
-  withStyles,
-  createStyles,
-  // eslint-disable-next-line no-unused-vars
-  WithStyles,
+  makeStyles,
   // eslint-disable-next-line no-unused-vars
   Theme,
 } from '@material-ui/core';
@@ -27,7 +24,7 @@ import {
 } from '../types';
 import { MARKERS } from './DateRangePicker';
 
-const styles = (theme: Theme) => createStyles({
+const useStyles = makeStyles((theme: Theme) => ({
   header: {
     padding: '20px 70px',
   },
@@ -39,9 +36,9 @@ const styles = (theme: Theme) => createStyles({
     borderLeft: `1px solid ${theme.palette.action.hover}`,
     marginBottom: 20,
   },
-});
+}));
 
-interface MenuProps extends WithStyles<typeof styles> {
+interface MenuProps {
   dateRange: DateRange;
   ranges: DefinedRange[];
   minDate: Date;
@@ -62,8 +59,9 @@ interface MenuProps extends WithStyles<typeof styles> {
 }
 
 const Menu: React.FunctionComponent<MenuProps> = (props: MenuProps) => {
+  const classes = useStyles();
+
   const {
-    classes,
     ranges,
     dateRange,
     minDate,
@@ -76,6 +74,7 @@ const Menu: React.FunctionComponent<MenuProps> = (props: MenuProps) => {
     helpers,
     handlers,
   } = props;
+
   const { startDate, endDate } = dateRange;
   const canNavigateCloser = differenceInCalendarMonths(secondMonth, firstMonth) >= 2;
   const commonProps = {
@@ -132,4 +131,4 @@ const Menu: React.FunctionComponent<MenuProps> = (props: MenuProps) => {
   );
 };
 
-export default withStyles(styles)(Menu);
+export default Menu;

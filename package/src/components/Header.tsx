@@ -1,11 +1,8 @@
 /* eslint-disable radix */
 
 import {
-  // eslint-disable-next-line no-unused-vars
-  WithStyles,
   Grid,
-  createStyles,
-  withStyles,
+  makeStyles,
   IconButton,
   Select,
   MenuItem,
@@ -20,7 +17,7 @@ import {
   getYear,
 } from 'date-fns';
 
-const styles = createStyles({
+const useStyles = makeStyles(() => ({
   iconContainer: {
     padding: 5,
   },
@@ -30,9 +27,9 @@ const styles = createStyles({
       background: 'none',
     },
   },
-});
+}));
 
-interface HeaderProps extends WithStyles<typeof styles> {
+interface HeaderProps {
   date: Date;
   setDate: (date: Date) => void;
   nextDisabled: boolean;
@@ -65,13 +62,14 @@ const generateYears = (relativeTo: Date, count: number) => {
 
 const Header: React.FunctionComponent<HeaderProps> = ({
   date,
-  classes,
   setDate,
   nextDisabled,
   prevDisabled,
   onClickNext,
   onClickPrevious,
 }: HeaderProps) => {
+  const classes = useStyles();
+
   const handleMonthChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setDate(setMonth(date, parseInt(event.target.value)));
   };
@@ -129,4 +127,4 @@ const Header: React.FunctionComponent<HeaderProps> = ({
   );
 };
 
-export default withStyles(styles)(Header);
+export default Header;

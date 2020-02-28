@@ -2,19 +2,14 @@
 
 import * as React from 'react';
 import classNames from 'classnames';
-import {
-  createStyles,
-  withStyles,
-  // eslint-disable-next-line no-unused-vars
-  WithStyles,
-} from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 
 // eslint-disable-next-line no-unused-vars
 import { DateRange, DefinedRange } from '../types';
 
 import DateRangePicker from './DateRangePicker';
 
-const styles = () => createStyles({
+const useStyles = makeStyles(() => ({
   dateRangePickerContainer: {
     position: 'relative',
   },
@@ -32,9 +27,9 @@ const styles = () => createStyles({
     left: 0,
     top: 0,
   },
-});
+}));
 
-interface DateRangePickerWrapperProps extends WithStyles<typeof styles> {
+interface DateRangePickerWrapperProps {
   open: boolean;
   toggle: () => void;
   initialDateRange?: DateRange;
@@ -49,10 +44,11 @@ interface DateRangePickerWrapperProps extends WithStyles<typeof styles> {
 const DateRangePickerWrapper: React.FunctionComponent<DateRangePickerWrapperProps> = (
   props: DateRangePickerWrapperProps,
 ) => {
+  const classes = useStyles();
+
   const {
     closeOnClickOutside,
     wrapperClassName,
-    classes,
     toggle,
     open,
   } = props;
@@ -88,4 +84,4 @@ const DateRangePickerWrapper: React.FunctionComponent<DateRangePickerWrapperProp
   );
 };
 
-export default withStyles(styles)(DateRangePickerWrapper);
+export default DateRangePickerWrapper;
