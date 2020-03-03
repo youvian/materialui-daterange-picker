@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { makeStyles } from '@material-ui/core';
 import { StylesProvider } from '@material-ui/core/styles';
 
-import createGenerateClassName from '../createGenerateClassName';
+import generateClassName from '../generateClassName';
 import DateRangePicker from './DateRangePicker';
 
 // eslint-disable-next-line no-unused-vars
@@ -68,7 +68,7 @@ const DateRangePickerWrapper: React.FunctionComponent<DateRangePickerWrapperProp
   const wrapperClasses = classNames(classes.dateRangePicker, wrapperClassName);
 
   return (
-    <StylesProvider generateClassName={createGenerateClassName}>
+    <StylesProvider generateClassName={generateClassName}>
       <div className={classes.dateRangePickerContainer}>
         {
           open && (

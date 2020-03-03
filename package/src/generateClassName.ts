@@ -6,13 +6,13 @@
 //
 // Copied from material-ui due to issue https://github.com/callemall/material-ui/issues/8223
 
-// This counter is moved outside from `createGenerateClassName` to solve the issue
+// This counter is moved outside from `generateClassName` to solve the issue
 let ruleCounter = 0;
 
 // Adds a prefix to all generated class names, to avoid conflict with other Material UI instances.
 const prefix = 'materialui-daterange-picker';
 
-export default function createGenerateClassName(rule: any, sheet: any) {
+export default function generateClassName(rule: any, sheet: any) {
   ruleCounter += 1;
 
   if (ruleCounter > 1e10) {
