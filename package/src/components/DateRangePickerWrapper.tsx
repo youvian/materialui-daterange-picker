@@ -38,7 +38,7 @@ export interface DateRangePickerWrapperProps {
   maxDate?: Date | string;
   onChange: (dateRange: DateRange) => void;
   closeOnClickOutside?: boolean;
-  wrapperClassName: object;
+  wrapperClassName?: string;
 }
 
 const DateRangePickerWrapper: React.FunctionComponent<DateRangePickerWrapperProps> = (
