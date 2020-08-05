@@ -6,6 +6,8 @@ A react date range picker implementation using @material-ui.
     <img src='https://img.shields.io/npm/v/materialui-daterange-picker.svg' alt='Latest npm version'>
 </a>
 
+## Preview
+
 ![Screenshot](/screenshot.png?raw=true "Screenshot")
 
 ## Live Demo
