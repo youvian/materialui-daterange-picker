@@ -8,7 +8,7 @@ A react date range picker implementation using @material-ui.
 
 ## Live Demo
 
-Check out the project running at https://pedro-lb.github.io/materialui-daterange-picker/
+Check out the project running at https://codesandbox.io/s/materialui-daterange-picker-2p3f1?file=/src/App.js
 
 ## Usage
 
