@@ -6,9 +6,11 @@ A react date range picker implementation using @material-ui.
     <img src='https://img.shields.io/npm/v/materialui-daterange-picker.svg' alt='Latest npm version'>
 </a>
 
+![Screenshot](/screenshot.png?raw=true "Screenshot")
+
 ## Live Demo
 
-Check out the project running at https://codesandbox.io/s/materialui-daterange-picker-2p3f1?file=/src/App.js
+Check out the project running [here](https://codesandbox.io/s/materialui-daterange-picker-2p3f1?file=/src/App.js)!
 
 ## Usage
 
@@ -18,8 +20,6 @@ npm install materialui-daterange-picker --save
 # or with yarn
 yarn add materialui-daterange-picker
 ```
-
-![Screenshot](/screenshot.png?raw=true "Screenshot")
 
 ## Basic example
 ```tsx
@@ -72,3 +72,9 @@ Name | Type | Required | Default value | Description
 `definedRanges` | `DefinedRange[]` | _optional_ | - | custom defined ranges to show in the list
 `closeOnClickOutside` | `boolean` | _optional_ | `true` | defines if DateRangePicker will be closed when clicking outside of it
 `wrapperClassName` | `object` | _optional_ | `undefined` | defines additional wrapper style classes
+
+## Made possible by
+
+<a href="https://github.com/jungsoft/materialui-daterange-picker/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=jungsoft/materialui-daterange-picker" />
+</a>
