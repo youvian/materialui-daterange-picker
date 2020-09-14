@@ -3,8 +3,8 @@ import DateRangePicker from './components/DateRangePicker';
 import { DateRange, DefinedRange } from './types';
 
 export {
-  DateRangePickerExporter as DateRangePickerOverlay,
-  DateRangePicker as DateRangePicker,
+  DateRangePickerExporter as DateRangePicker,
+  DateRangePicker as DateRangePickerComponent,
   DefinedRange,
   DateRange,
 };
