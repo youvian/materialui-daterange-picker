@@ -8,7 +8,7 @@ node_modules
 
 # builds
 build
-dist
+# dist
 .rpt2_cache
 
 # misc
@@ -24,4 +24,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # NPM README file
-package/README.md
+# package/README.md
